@@ -1,38 +1,35 @@
-header {
-  position: sticky;
-  z-index: 1;
-  transition: top 0.3s ease-in-out;
-  top: 0;
-}
 
 .menu {
   display: none;
 }
 
-.navMenu {
-  display: flex;
-  width: 60%;
-  padding: 0 5vw;
-  justify-content: space-between;
+.header {
+  justify-content: flex-start;
+  position: relative;
+  left: 4vw;
+  gap: 5vw;
 }
+
+.navMenu {
+  height: 10vh;
+}
+
+.navMenu *:nth-child(5) {
+  position: absolute;
+  right: 10vw;
+}
+
 
 .navMenu a {
   display: flex;
   text-decoration: none;
-  height: 5vh;
   align-items: center;
-  color: white;
-  width: 25%;
+  color: var(--font-color);
   justify-content: center;
+  padding: var(--default-padding);
 }
 
-.nav1 {
-  display: flex;
-  align-items: center;
-  width: 40%;
-  justify-content: space-around;
-}
 
 .navMenu a:hover {
-  background-color: #414141;
+  background-color: var(--secondary-color);
 }

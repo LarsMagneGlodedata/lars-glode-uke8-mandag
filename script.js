@@ -1,27 +1,27 @@
 // BURGER MENU
 document.addEventListener('DOMContentLoaded', () => {
+  if (window.matchMedia('(max-width: 699px)').matches) {
   let isNavOpen = false;
   const burger = document.querySelector('.burger');
   const navMenu = document.querySelector('.navMenu');
   const main = document.querySelector('main');
   const overlay = document.querySelector('.overlay');
   let mainHeight = document.querySelector('main').offsetHeight;
+  let navHeight = document.querySelector('.navMenu a').offsetHeight;
 
   // function for å åpne nav
   function openNav() {
-    navMenu.style.height = '193px';
+    navMenu.style.height = `${navHeight * 5}px`;
     overlay.style.height = `${mainHeight + 193}px`;
     burger.classList.toggle('change');
-    if (navMenu) navMenu.style.height === '193px';
     isNavOpen = true;
   }
 
   //  function for å lukke nav
   function closeNav() {
-    navMenu.style.height = '0';
-    overlay.style.height = '0';
+    navMenu.style.height = '';
+    overlay.style.height = '';
     burger.classList.toggle('change');
-    if (navMenu) navMenu.style.height === '0';
     isNavOpen = false;
   }
 
@@ -72,51 +72,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     prevScrollpos = currentScrollPos;
   };
+}
 });
 
 //
 
-document.addEventListener('DOMContentLoaded', function (event) {
-  let dataText = ['Hei, dette er en test!', 'Testen er fullført...!'];
-  let hero = document.querySelector('.heroP');
 
-  function typewriter(text, i, callback) {
-    if (i < text.length) {
-      hero.innerHTML =
-        text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
-      setTimeout(function () {
-        typewriter(text, i + 1, callback);
-      }, 50);
-    } else if (typeof callback == 'function') {
-      setTimeout(callback, 2000);
-    }
-  }
-
-  function deleteText(text, i, callback) {
-    if (i >= !text.length) {
-      hero.innerHTML =
-        text.substring(0, i) + '<span aria-hidden="true"></span>';
-      setTimeout(function () {
-        deleteText(text, i - 1, callback);
-      }, 20);
-    } else if (typeof callback == 'function') {
-      setTimeout(callback, 500);
-    }
-  }
-
-  function startAnimation(i) {
-    if (i < dataText.length) {
-      typewriter(dataText[i], 0, function () {
-        deleteText(dataText[i], dataText[i].length, function () {
-          startAnimation(i + 1);
-        });
-      });
-    } else {
-      setTimeout(function () {
-        startAnimation(0);
-      }, 3000);
-    }
-  }
-
-  startAnimation(0);
-});

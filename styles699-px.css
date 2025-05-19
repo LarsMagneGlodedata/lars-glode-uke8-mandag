@@ -18,7 +18,7 @@ nav {
 
 
 .burger {
-  background-color: #333333;
+  background-color: var(--primary-color);
   cursor: pointer;
 }
 
@@ -27,7 +27,7 @@ nav {
 .bar3 {
   width: 35px;
   height: 5px;
-  background-color: rgb(146, 146, 146);
+  background-color: var(--font-color);
   margin: 6px 0;
   transition: 0.4s;
 }
@@ -46,8 +46,6 @@ nav {
 
 .navMenu {
   display: block;
-  width: 100vw;
-  padding: 0 5vw;
   transition: 0.5s;
   overflow: hidden;
   height: 0;
@@ -59,7 +57,7 @@ nav {
   display: block;
   height: 5vh;
   align-content: center;
-  color: white;
+  color: var(--font-color);
 }
 
 .overlay {

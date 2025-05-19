@@ -1,12 +1,13 @@
 :root {
-  --primary-color: #050510;
-  --secondary-color: #111130;
-  --background-color: #000000;
-  --font-color: white;
+  --primary-color: #;
+  --secondary-color: #73EEDC;
+  --background-color: white;
+  --font-color: #73C2BE;
   --heading-font: ;
   --spacing: ;
   --default-padding: 1em;
   --default-margin: 1em;
+  --default-gap: 1em;
   --default-border-radius: 15px;
   --default-box-shadow: 0 0 5px 1px var(--secondary-color);
   --p-size: 20px;
